@@ -57,7 +57,7 @@
                         <h1 class="mx-auto my-0 text-uppercase">{Coding_dev}</h1><br><br>
                         <h3><span class="text"></span> </h3><br><br>
                         <h2 class="text-white-50 mx-auto mt-2 mb-5">Construyendo la puerta hacia tu exito online.</h2>
-                        <a class="btn btn-info" href="#about">Contactame</a>
+                        <a class="btn btn-info" href="#signup">Contactame</a>
                     </div>
                 </div>
             </div>
@@ -69,57 +69,399 @@
                     <div class="col-lg-8">
                         <h2 class="text-white mb-4">en {coding_dev} creamos arte en linea</h2>
                         <p class="text-white-50">
-                            Bienvenido a mi portafolio personal. Soy un desarrollador web apasionado con experiencia en HTML5, CSS3 y JavaScript.
-                            <a href="#">ver portafolio.</a> Me gusta crear sitios web interactivos y funcionales que brinden una gran experiencia al usuario.
+                            Bienvenido a mi portafolio empresarial.soy professional technician in programming and web development, Soy un programador, apasionado, con experiencia en HTML5, CSS3, JavaScript y PHP.
+                            <a href="#projects">ver portafolio.</a> Buscamos crear website interactivos y funcionales que brinden una gran experiencia al usuario, garantizando un trabajo excelente y de calidad.
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/persondev.png" alt="..." />
+                <img class="img-fluid" src="assets/img/persondev2.png" alt="..." />
             </div>
-        </section>
+        </section><br><br>
+
+
+
         <!-- Projects-->
+
         <section class="projects-section bg-light" id="projects">
-            <div class="container px-4 px-lg-5">
-                <!-- Featured Project Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/websiteschool.jpg" alt="school art graphycs" /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>school art graphycs</h4>
-                            <p class="text-black-50 mb-0">Este fue mi primer website, lo cual representó una gran entrega, compromiso e ilusión ya que dí el 110% por este proyecto, por ende el resultado fue magnifico.</p>
-                        </div>
+
+            
+                <div class="container px-4 px-lg-5">
+                  <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7">
+                      <img class="img-fluid mb-3 mb-lg-0" src="assets/img/websiteschool.jpg" alt="school art graphycs" />
                     </div>
-                </div><br><br>
+                    <div class="col-xl-4 col-lg-5">
+                      <div class="featured-text text-center text-lg-left">
+                        <h4>school art graphycs</h4>
+                        <p class="text-black-50 mb-0">
+                          En este website, contiene un diseño muy interactivo, fácil de interpretar. Contiene también un dashboard con los roles de usuario, ingreso y registro de estudiantes, docentes y modificaciones e ingreso de notas en PHP puro.
+                        </p>
+                        <p>
+                          <a href="#" id="previewLink">Previsualizar web</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+<script>
+
+function showImageCarousel() {
+  var carouselDiv = document.createElement("div");
+  carouselDiv.setAttribute("id", "imageCarousel");
+  carouselDiv.style.position = "fixed";
+  carouselDiv.style.top = "0";
+  carouselDiv.style.left = "0";
+  carouselDiv.style.width = "100vw";
+  carouselDiv.style.height = "100vh";
+  carouselDiv.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+  carouselDiv.style.zIndex = "9999";
+
+  var currentIndex = 1; // Índice de la imagen actual
+  var totalImages = 25; // Número total de imágenes
+
+  var imageElement = document.createElement("img");
+  imageElement.style.position = "absolute";
+  imageElement.style.top = "50%";
+  imageElement.style.left = "50%";
+  imageElement.style.transform = "translate(-50%, -50%)";
+  imageElement.style.width = "70%";
+  imageElement.style.height = "auto";
+
+  // Función para cargar la imagen por índice
+  function loadImageByIndex() {
+  imageElement.src = `assets/img/website01/${currentIndex}.png`;
+}
+
+
+  // Cargar la primera imagen al iniciar
+  loadImageByIndex();
+
+  carouselDiv.appendChild(imageElement);
+
+  var leftArrow = document.createElement("i");
+  leftArrow.className = "bx bx-chevron-left";
+  leftArrow.style.position = "absolute";
+  leftArrow.style.top = "50%";
+  leftArrow.style.left = "10px";
+  leftArrow.style.transform = "translateY(-50%)";
+  leftArrow.style.fontSize = "100px";
+  leftArrow.style.color = "white";
+  leftArrow.style.cursor = "pointer";
+  leftArrow.addEventListener("click", showPreviousImage);
+
+  carouselDiv.appendChild(leftArrow);
+
+  var rightArrow = document.createElement("i");
+  rightArrow.className = "bx bx-chevron-right";
+  rightArrow.style.position = "absolute";
+  rightArrow.style.top = "50%";
+  rightArrow.style.right = "10px";
+  rightArrow.style.transform = "translateY(-50%)";
+  rightArrow.style.fontSize = "100px";
+  rightArrow.style.color = "white";
+  rightArrow.style.cursor = "pointer";
+  rightArrow.addEventListener("click", showNextImage);
+
+  carouselDiv.appendChild(rightArrow);
+
+  var closeButton = document.createElement("i");
+  closeButton.className = "bx bx-x-circle";
+  closeButton.style.position = "absolute";
+  closeButton.style.top = "10px";
+  closeButton.style.right = "10px";
+  closeButton.style.fontSize = "44px";
+  closeButton.style.color = "white";
+  closeButton.style.cursor = "pointer";
+  closeButton.addEventListener("click", closeImageCarousel);
+
+  carouselDiv.appendChild(closeButton);
+
+  document.body.appendChild(carouselDiv);
+
+  // Cargar la imagen anterior
+  function showPreviousImage() {
+    currentIndex--;
+    if (currentIndex < 1) {
+      currentIndex = totalImages;
+    }
+    loadImageByIndex();
+  }
+
+  // Cargar la imagen siguiente
+  function showNextImage() {
+    currentIndex++;
+    if (currentIndex > totalImages) {
+      currentIndex = 1;
+    }
+    loadImageByIndex();
+  }
+}
+
+function closeImageCarousel() {
+  var carouselDiv = document.getElementById("imageCarousel");
+  carouselDiv.parentNode.removeChild(carouselDiv);
+}
+
+var previewLink = document.getElementById("previewLink");
+previewLink.addEventListener("click", showImageCarousel);
+</script>
+
+            
+          
+                
+                
+                
                 <!-- Project One Row-->
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/burbujas.jpg" alt="burbujas de acuarela" /></div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid" src="assets/img/burbujas.jpg" alt="burbujas de acuarela" />
+                    </div>
                     <div class="col-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
                                     <h4 class="text-white">Replicando website escolar</h4>
-                                    <p class="mb-0 text-white-50">Con este proyecto la principal intención fue replicar un website existente de un jardin infantil de mi país, pero con ciertas mejoras o personalizaciones que quise agregar a mejorar del propio sitio. cabe resaltar que fue un proyecto de final de semestre.</p>
+                                    <p class="mb-0 text-white-50">
+                                        Con este proyecto, la principal intención fue replicar un website existente de un jardín infantil de mi país, pero con ciertas mejoras o personalizaciones que quise agregar para mejorar el sitio. Contiene un dashboard con roles de usuario, ingreso, registros, también notas, ubicación geográfica del plantel educativo, posible seguimiento de ruta escolar en caso de tener una y resumen de actividades del mes.
+                                    </p><br>
+                                    <a href="#" class="previewLink">Previsualizar web</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <script>
+                function showImageCarousel() {
+                    var carouselDiv = document.createElement("div");
+                    carouselDiv.setAttribute("id", "imageCarousel");
+                    carouselDiv.style.position = "fixed";
+                    carouselDiv.style.top = "0";
+                    carouselDiv.style.left = "0";
+                    carouselDiv.style.width = "100vw";
+                    carouselDiv.style.height = "100vh";
+                    carouselDiv.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                    carouselDiv.style.zIndex = "9999";
+                
+                    var currentIndex = 1; // Índice de la imagen actual
+                    var totalImages = 15; // Número total de imágenes
+                
+                    var imageElement = document.createElement("img");
+                    imageElement.style.position = "absolute";
+                    imageElement.style.top = "50%";
+                    imageElement.style.left = "50%";
+                    imageElement.style.transform = "translate(-50%, -50%)";
+                    imageElement.style.width = "70%";
+                    imageElement.style.height = "auto";
+                
+                    // Función para cargar la imagen por índice
+                    function loadImageByIndex() {
+                        imageElement.src = `assets/img/website02/${currentIndex}.png`;
+                    }
+                
+                    // Cargar la primera imagen al iniciar
+                    loadImageByIndex();
+                
+                    carouselDiv.appendChild(imageElement);
+                
+                    var leftArrow = document.createElement("i");
+                    leftArrow.className = "bx bx-chevron-left";
+                    leftArrow.style.position = "absolute";
+                    leftArrow.style.top = "50%";
+                    leftArrow.style.left = "10px";
+                    leftArrow.style.transform = "translateY(-50%)";
+                    leftArrow.style.fontSize = "52px";
+                    leftArrow.style.color = "white";
+                    leftArrow.style.cursor = "pointer";
+                    leftArrow.addEventListener("click", showPreviousImage);
+                
+                    carouselDiv.appendChild(leftArrow);
+                
+                    var rightArrow = document.createElement("i");
+                    rightArrow.className = "bx bx-chevron-right";
+                    rightArrow.style.position = "absolute";
+                    rightArrow.style.top = "50%";
+                    rightArrow.style.right = "10px";
+                    rightArrow.style.transform = "translateY(-50%)";
+                    rightArrow.style.fontSize = "52px";
+                    rightArrow.style.color = "white";
+                    rightArrow.style.cursor = "pointer";
+                    rightArrow.addEventListener("click", showNextImage);
+                
+                    carouselDiv.appendChild(rightArrow);
+                
+                    var closeButton = document.createElement("i");
+                    closeButton.className = "bx bx-x-circle";
+                    closeButton.style.position = "absolute";
+                    closeButton.style.top = "10px";
+                    closeButton.style.right = "10px";
+                    closeButton.style.fontSize = "44px";
+                    closeButton.style.color = "white";
+                    closeButton.style.cursor = "pointer";
+                    closeButton.addEventListener("click", closeImageCarousel);
+                
+                    carouselDiv.appendChild(closeButton);
+                
+                    document.body.appendChild(carouselDiv);
+                
+                    // Cargar la imagen anterior
+                    function showPreviousImage() {
+                        currentIndex--;
+                        if (currentIndex < 1) {
+                            currentIndex = totalImages;
+                        }
+                        loadImageByIndex();
+                    }
+                
+                    // Cargar la imagen siguiente
+                    function showNextImage() {
+                        currentIndex++;
+                        if (currentIndex > totalImages) {
+                            currentIndex = 1;
+                        }
+                        loadImageByIndex();
+                    }
+                }
+                
+                function closeImageCarousel() {
+                    var carouselDiv = document.getElementById("imageCarousel");
+                    carouselDiv.parentNode.removeChild(carouselDiv);
+                }
+                
+                var previewLinks = document.getElementsByClassName("previewLink");
+                for (var i = 0; i < previewLinks.length; i++) {
+                    previewLinks[i].addEventListener("click", showImageCarousel);
+                }
+                </script>
+
+
+                
                 <!-- Project Two Row-->
                 <div class="row gx-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/amarillo.jpg" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid" src="assets/img/amarillo.jpg" alt="..." />
+                    </div>
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
                                     <h4 class="text-white">website school proyecto</h4>
-                                    <p class="mb-0 text-white-50">Este website tambien fue un trabajo de clases con la finalidad de elevar nuestra creatividad al maxino tomando como base un color "poco tradicional"</p>
+                                    <p class="mb-0 text-white-50">Este website fue un trabajo universitario con la finalidad de desarrollar habilidades adquiridas durante el primer semestre</p>
+                                    <br>
+                                    <a href="#" class="previewLink">Previsualizar web</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                
+                <script>
+                function showImageCarousel() {
+                    var carouselDiv = document.createElement("div");
+                    carouselDiv.setAttribute("id", "imageCarousel");
+                    carouselDiv.style.position = "fixed";
+                    carouselDiv.style.top = "0";
+                    carouselDiv.style.left = "0";
+                    carouselDiv.style.width = "100vw";
+                    carouselDiv.style.height = "100vh";
+                    carouselDiv.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                    carouselDiv.style.zIndex = "9999";
+                
+                    var currentIndex = 1; // Índice de la imagen actual
+                    var totalImages = 13; // Número total de imágenes
+                
+                    var imageElement = document.createElement("img");
+                    imageElement.style.position = "absolute";
+                    imageElement.style.top = "50%";
+                    imageElement.style.left = "50%";
+                    imageElement.style.transform = "translate(-50%, -50%)";
+                    imageElement.style.width = "70%";
+                    imageElement.style.height = "auto";
+                
+                    // Función para cargar la imagen por índice
+                    function loadImageByIndex() {
+                        imageElement.src = `assets/img/website03/${currentIndex}.png`;
+                    }
+                
+                    // Cargar la primera imagen al iniciar
+                    loadImageByIndex();
+                
+                    carouselDiv.appendChild(imageElement);
+                
+                    var leftArrow = document.createElement("i");
+                    leftArrow.className = "bx bx-chevron-left";
+                    leftArrow.style.position = "absolute";
+                    leftArrow.style.top = "50%";
+                    leftArrow.style.left = "10px";
+                    leftArrow.style.transform = "translateY(-50%)";
+                    leftArrow.style.fontSize = "52px";
+                    leftArrow.style.color = "white";
+                    leftArrow.style.cursor = "pointer";
+                    leftArrow.addEventListener("click", showPreviousImage);
+                
+                    carouselDiv.appendChild(leftArrow);
+                
+                    var rightArrow = document.createElement("i");
+                    rightArrow.className = "bx bx-chevron-right";
+                    rightArrow.style.position = "absolute";
+                    rightArrow.style.top = "50%";
+                    rightArrow.style.right = "10px";
+                    rightArrow.style.transform = "translateY(-50%)";
+                    rightArrow.style.fontSize = "52px";
+                    rightArrow.style.color = "white";
+                    rightArrow.style.cursor = "pointer";
+                    rightArrow.addEventListener("click", showNextImage);
+                
+                    carouselDiv.appendChild(rightArrow);
+                
+                    var closeButton = document.createElement("i");
+                    closeButton.className = "bx bx-x-circle";
+                    closeButton.style.position = "absolute";
+                    closeButton.style.top = "10px";
+                    closeButton.style.right = "10px";
+                    closeButton.style.fontSize = "44px";
+                    closeButton.style.color = "white";
+                    closeButton.style.cursor = "pointer";
+                    closeButton.addEventListener("click", closeImageCarousel);
+                
+                    carouselDiv.appendChild(closeButton);
+                
+                    document.body.appendChild(carouselDiv);
+                
+                    // Cargar la imagen anterior
+                    function showPreviousImage() {
+                        currentIndex--;
+                        if (currentIndex < 1) {
+                            currentIndex = totalImages;
+                        }
+                        loadImageByIndex();
+                    }
+                
+                    // Cargar la imagen siguiente
+                    function showNextImage() {
+                        currentIndex++;
+                        if (currentIndex > totalImages) {
+                            currentIndex = 1;
+                        }
+                        loadImageByIndex();
+                    }
+                }
+                
+                function closeImageCarousel() {
+                    var carouselDiv = document.getElementById("imageCarousel");
+                    carouselDiv.parentNode.removeChild(carouselDiv);
+                }
+                
+                var previewLinks = document.getElementsByClassName("previewLink");
+                for (var i = 0; i < previewLinks.length; i++) {
+                    previewLinks[i].addEventListener("click", showImageCarousel);
+                }
+                </script>
+                
         </section>
 
+
+        
         <!--LENGUAJES & FRAMEWORKS QUE MANEJO-->
         <h2>Lenguajes & frameworks</h2><br><br>
         <article class="lenguaje">
@@ -152,48 +494,32 @@
         </article>
         <!-- Signup-->
         <section class="signup-section" id="signup">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+            <div class="container_form">
+                <div class="row">
+                    <div class="text-center">
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                         <h2 class="text-white mb-5">envia un email para contactarte!</h2>
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+                        <form action="https://formsubmit.co/codingdev97@gmail.com" method="POST" class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
                             <!-- Email address input-->
-                            <div class="row input-group-newsletter">
-                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="escribe tu mensaje aquí..." data-sb-validations="required" /></div>
-                                <div class="col-auto"><button class="btn btn-info disabled" id="submitButton" type="submit">Contactame!</button></div>
-                            </div>
-                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
-                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3 mt-2 text-white">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJZWxNvhWHJsWQXgvhGFFWnXFdGPdDRwJkHLpVtmDDFHVxhlgrgVSCLfHVJpPxdDlWzmxgV">eertyui</a>
+                            <div class="row_form input-group-newsletter">
+                                <div class="col-10">
+                                    <input class="form-control" id="emailAddress" name="email" type="email" placeholder="Enter email address..." aria-label="escribe tu mensaje aquí..." data-sb-validations="required" />
+                                </div><br>
+                                <div class="col-10">
+                                    <textarea class="form-label" id="exampleFormControlTextarea1" name="textarea" type="textarea" placeholder="Escribe tu mensaje aquí..." aria-label="escribe tu mensaje aquí..." data-sb-validations="required"></textarea>
+                                </div><br>
+                                <div class="col-auto">
+                                    <button class="btn btn-info " id="submitButton" type="submit">¡Contactame!</button>
                                 </div>
                             </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Contact-->
         <section class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
@@ -212,7 +538,7 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
+                                <h4 class="text-uppercase m-0">Email:</h4>
                                 <hr class="my-4 mx-auto" />
                                 <div class="small text-black-50"><a href="#!">codingdev97@gmail.com</a></div>
                             </div>
@@ -222,7 +548,7 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone:</h4>
+                                <h4 class="text-uppercase m-0">Phone whatsapp:</h4>
                                 <hr class="my-4 mx-auto" />
                                 <div class="small text-black-50">+57 324 2819561</div>
                             </div>
@@ -230,9 +556,10 @@
                     </div>
                 </div>
                 <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="https://twitter.com/i/flow/login"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://wa.me/573242819561"><i class='bx bxl-whatsapp'></i></a>
+                    <a class="mx-2" href="https://github.com/jairpalacio97"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>
